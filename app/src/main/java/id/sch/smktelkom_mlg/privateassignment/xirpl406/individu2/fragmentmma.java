@@ -74,7 +74,7 @@ public class fragmentmma extends Fragment {
         }
 
         protected String FetchMovies(String... params) {
-            String url = "http://api.themoviedb.org/3/movie/now_playing";
+            String url = "http://api.themoviedb.org/3/movie/popular";
             GsonGetRequest<Movie> myRequest = new GsonGetRequest<Movie>
                     (url, Movie.class, null, new Response.Listener<Movie>() {
 

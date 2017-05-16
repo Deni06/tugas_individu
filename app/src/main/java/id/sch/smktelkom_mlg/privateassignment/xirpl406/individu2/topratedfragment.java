@@ -56,7 +56,7 @@ public class topratedfragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         FetchMovies fetchMovies = new FetchMovies();
-        String url = "http://api.themoviedb.org/3/movie/top_rated?api_key=6d7e2b900ca23da4edbfa877b0a5b042";
+        String url = "http://api.themoviedb.org/3/movie/top_rated";
         fetchMovies.execute(url);
     }
 
