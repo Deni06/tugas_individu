@@ -53,7 +53,7 @@ public class GridviewAdapter extends BaseAdapter {
         Movie movie = getItem(position);
 
         Glide.with(context) //
-                .load(Movie.getPoster_path()) //
+                .load(movie.getPoster_path()) //
                 .placeholder(R.drawable.ic_image_black_24dp) //
                 .error(R.drawable.ic_error_black_24dp) //
                 .into(imageView);

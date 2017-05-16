@@ -195,14 +195,14 @@ public class MovieitemListActivity extends AppCompatActivity {
                     if (mTwoPane) {
 
                         Bundle arguments = new Bundle();
-                        arguments.putString("poster_path", Movie.getPoster_path());
-                        arguments.putString("backdrop_path", Movie.getBackdrop_path());
-                        arguments.putString("year", Movie.getRelease_date());
-                        arguments.putString("release", Movie.getRelease_date());
-                        arguments.putString("sinopsis", Movie.getOverview());
-                        arguments.putString("title", Movie.getTitle());
-                        arguments.putFloat("duration", Movie.getVote_average());
-                        arguments.putInt("id", Movie.getID());
+                        arguments.putString("poster_path", movie.getPoster_path());
+                        arguments.putString("backdrop_path", movie.getBackdrop_path());
+                        arguments.putString("year", movie.getRelease_date());
+                        arguments.putString("release", movie.getRelease_date());
+                        arguments.putString("sinopsis", movie.getOverview());
+                        arguments.putString("title", movie.getTitle());
+                        arguments.putFloat("duration", movie.getVote_average());
+                        arguments.putInt("id", movie.getID());
                         Movie_DetailFragment fragment = new Movie_DetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
@@ -210,14 +210,14 @@ public class MovieitemListActivity extends AppCompatActivity {
                                 .commit();
                     } else {
                         Intent intent = new Intent(MovieitemListActivity.this, MovieItemDetailActivity.class);
-                        intent.putExtra("poster_path", Movie.getPoster_path());
-                        intent.putExtra("backdrop_path", Movie.getBackdrop_path());
-                        intent.putExtra("year", Movie.getRelease_date());
-                        intent.putExtra("release", Movie.getRelease_date());
-                        intent.putExtra("sinopsis", Movie.getOverview());
-                        intent.putExtra("title", Movie.getTitle());
-                        intent.putExtra("duration", Movie.getVote_average());
-                        intent.putExtra("id", Movie.getID());
+                        intent.putExtra("poster_path", movie.getPoster_path());
+                        intent.putExtra("backdrop_path", movie.getBackdrop_path());
+                        intent.putExtra("year", movie.getRelease_date());
+                        intent.putExtra("release", movie.getRelease_date());
+                        intent.putExtra("sinopsis", movie.getOverview());
+                        intent.putExtra("title", movie.getTitle());
+                        intent.putExtra("duration", movie.getVote_average());
+                        intent.putExtra("id", movie.getID());
 
                         startActivity(intent);
                     }
