@@ -1,0 +1,82 @@
+package id.sch.smktelkom_mlg.privateassignment.xirpl406.individu2.service;
+
+import android.app.Application;
+import android.content.Context;
+import android.text.TextUtils;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.Volley;
+
+import id.sch.smktelkom_mlg.privateassignment.xirpl406.individu2.MainActivity;
+
+/**
+ * Created by Windows XP on 15/05/2017.
+ */
+
+public class VolleySingleton extends Application {
+
+    public static final String TAG = VolleySingleton.class.getSimpleName();
+    private static Context mCtx;
+    private static volatile VolleySingleton mInstance;
+    private RequestQueue mRequestQueue;
+    private ImageLoader mImageLoader;
+
+    private VolleySingleton(Context context) {
+        if (mInstance != null) {
+            throw new RuntimeException(
+                    "Use getInstance() method to get the single instance of this class");
+        }
+        mCtx = context;
+        mRequestQueue = getRequestQueue();
+    }
+
+    public static VolleySingleton getInstance(Context context) {
+        if (mInstance == null) {
+            synchronized (VolleySingleton.class) {
+                if (mInstance == null) mInstance = new VolleySingleton(context);
+            }
+        }
+        return mInstance;
+    }
+
+    public static synchronized VolleySingleton getInstance(MainActivity.FetchMovies fetchMovies) {
+        return mInstance;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
+
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+        }
+        return mRequestQueue;
+    }
+
+    public <T> void addToRequestQueue(Request<T> req, String tag) {
+        // set the default tag if tag is empty
+        req.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
+        getRequestQueue().add(req);
+    }
+
+    public ImageLoader getImageLoader() {
+        getRequestQueue();
+        return this.mImageLoader;
+    }
+
+    public <T> void addToRequestQueue(Request<T> req) {
+        req.setTag(TAG);
+        getRequestQueue().add(req);
+    }
+
+    public void cancelPendingRequests(Object tag) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(tag);
+        }
+    }
+}
