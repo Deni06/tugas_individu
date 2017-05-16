@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 final String BASE_URL = params[0];
 
-                final String API_KEY = "?api_key=f2f590fcd2fdf04c6bf809b6c08b3ef9";
+                final String API_KEY = "?api_key=6d7e2b900ca23da4edbfa877b0a5b042";
                 Uri builtUri = Uri.parse(BASE_URL + API_KEY).buildUpon()
                         .build();
 

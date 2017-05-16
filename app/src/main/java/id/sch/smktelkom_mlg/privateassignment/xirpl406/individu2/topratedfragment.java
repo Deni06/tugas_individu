@@ -254,14 +254,14 @@ public class topratedfragment extends Fragment {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Movie movie = movies.get(position);
                     Intent intent = new Intent(getActivity(), MovieDetail.class);
-                    intent.putExtra("poster_path", Movie.getPoster_path());
-                    intent.putExtra("backdrop_path", Movie.getBackdrop_path());
-                    intent.putExtra("year", Movie.getRelease_date());
-                    intent.putExtra("release", Movie.getRelease_date());
-                    intent.putExtra("sinopsis", Movie.getOverview());
-                    intent.putExtra("title", Movie.getTitle());
-                    intent.putExtra("duration", Movie.getVote_average());
-                    intent.putExtra("id", Movie.getID());
+                    intent.putExtra("poster_path", movie.getPoster_path());
+                    intent.putExtra("backdrop_path", movie.getBackdrop_path());
+                    intent.putExtra("year", movie.getRelease_date());
+                    intent.putExtra("release", movie.getRelease_date());
+                    intent.putExtra("sinopsis", movie.getOverview());
+                    intent.putExtra("title", movie.getTitle());
+                    intent.putExtra("duration", movie.getVote_average());
+                    intent.putExtra("id", movie.getID());
 
                     startActivity(intent);
                 }

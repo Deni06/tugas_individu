@@ -1,82 +1,44 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl406.individu2.model;
 
-import com.orm.SugarRecord;
-
-import java.io.Serializable;
-
 /**
  * Created by Windows XP on 15/05/2017.
  */
 
-public class Movie extends SugarRecord implements Serializable {
+public class Movie {
 
-    private static String poster_path;
-    private static String backdrop_path;
-    private static String overview;
-    private static String release_date;
-    private static int id;
-    private static String title;
-    private static float vote_average;
     public String source;
+
+    private String poster_path;
+    private String backdrop_path;
     private boolean adult;
+    private String overview;
+    private String release_date;
     private String[] genre_ids;
+    private int id;
+    private String title;
     private String language;
     private String org_title;
     private String org_language;
+
     private float popularity;
     private int vote_count;
     private boolean video;
+    private float vote_average;
 
-    public static String getBackdrop_path() {
+    public String getBackdrop_path() {
         return backdrop_path;
     }
 
     public void setBackdrop_path(String backdrop_path) {
-        Movie.backdrop_path = backdrop_path;
+        this.backdrop_path = backdrop_path;
     }
 
-    public static String getPoster_path() {
+    public String getPoster_path() {
         return poster_path;
     }
 
     public void setPoster_path(String poster_path) {
-        Movie.poster_path = poster_path;
-    }
-
-    public static String getOverview() {
-        return overview;
-    }
-
-    public void setOverview(String overview) {
-        Movie.overview = overview;
-    }
-
-    public static String getRelease_date() {
-        return release_date;
-    }
-
-    public void setRelease_date(String release_date) {
-        Movie.release_date = release_date;
-    }
-
-    public static int getID() {
-        return id;
-    }
-
-    public static String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        Movie.title = title;
-    }
-
-    public static float getVote_average() {
-        return vote_average;
-    }
-
-    public void setVote_average(float vote_average) {
-        Movie.vote_average = vote_average;
+        this.poster_path = poster_path;
     }
 
     public boolean isAdult() {
@@ -87,6 +49,22 @@ public class Movie extends SugarRecord implements Serializable {
         this.adult = adult;
     }
 
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
+    }
+
     public String[] getGenre_ids() {
         return genre_ids;
     }
@@ -95,8 +73,20 @@ public class Movie extends SugarRecord implements Serializable {
         this.genre_ids = genre_ids;
     }
 
+    public int getID() {
+        return id;
+    }
+
     public void setId(int id) {
-        Movie.id = id;
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getLanguage() {
@@ -145,5 +135,13 @@ public class Movie extends SugarRecord implements Serializable {
 
     public void setVideo(boolean video) {
         this.video = video;
+    }
+
+    public float getVote_average() {
+        return vote_average;
+    }
+
+    public void setVote_average(float vote_average) {
+        this.vote_average = vote_average;
     }
 }
