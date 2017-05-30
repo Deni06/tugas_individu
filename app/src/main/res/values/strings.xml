@@ -17,5 +17,7 @@
     <string name="title_movieitem_detail">MovieItem Detail</string>
     <string name="title_test_list">Tests</string>
     <string name="title_test_detail">Test Detail</string>
-
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
 </resources>
